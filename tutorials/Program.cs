@@ -1,5 +1,7 @@
 ﻿namespace tutorials;
 
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 class Personne
 {
     public Personne() : this("Anonymous", 0) { }
@@ -23,6 +25,6 @@ class Program
     static void Main()
     {
         var p = new Personne("Marjolaine", 23);
-        Console.WriteLine(p.Hello(true));
+        Console.WriteLine(JsonConvert.SerializeObject(p, Formatting.Indented));
     }
 }
